@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { Spacer } from "@chakra-ui/react";
 import html2canvas from "html2canvas";
 import axios from "axios";
