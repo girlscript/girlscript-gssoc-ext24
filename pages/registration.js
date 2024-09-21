@@ -173,7 +173,7 @@ const Registration = () => {
     ProjectAdmin: paTargetDate - new Date() < 0,
   };
 
-   const handleNext = () => {
+  const handleNext = () => {
     if (currentStep === 1) {
       if (!role) {
         setErrors((prevErrors) => ({
@@ -188,7 +188,7 @@ const Registration = () => {
           referral: router?.query?.referral,
         });
       }
-  
+
       if (role !== "CA" && !isRoleTimerUp[role]) {
         const timerState = {
           CA: caTimeLeft,
@@ -196,7 +196,7 @@ const Registration = () => {
           Mentor: mentorTimeLeft,
           ProjectAdmin: paTimeLeft,
         }[role];
-  
+
         setCurrentStep(2);
         setSelectedTimer(timerState);
         setErrors((prevErrors) => ({
@@ -208,7 +208,7 @@ const Registration = () => {
         setIsNext(true);
         return;
       }
-  
+
       setIsNext(true);
       setCurrentStep(currentStep + 1);
       setErrors((prevErrors) => ({
@@ -241,7 +241,7 @@ const Registration = () => {
           ...prevErrors,
           ...newErrors,
         }));
-        return; 
+        return;
       }
       setIsNext(true);
       setCurrentStep(currentStep + 1);
@@ -250,7 +250,6 @@ const Registration = () => {
       }));
     }
   };
-  
 
   const formatTimeLeft = (timeLeft) => {
     const { hours, minutes } = timeLeft;
@@ -260,10 +259,11 @@ const Registration = () => {
   const handleBack = () => {
     setCurrentStep(currentStep - 1);
   };
-  const handleRoleChange = (e) => {
-    setRole(e.target.value);
+  const handleRoleSelectAndNext = (selectedRole) => {
+    setRole(selectedRole);
     setFormData({});
     setIsNext(false);
+    handleNext();
   };
 
   const handleCountryChange = (selectedCountry) => {
@@ -419,26 +419,19 @@ const Registration = () => {
         return (
           <>
             <div className="w-full h-full absolute">
-              <div className="relative h-full w-full">
+              <div className="relative h-full w-full overflow-hidden">
                 <img
                   src="https://github.com/user-attachments/assets/d22f4ba6-99c8-4f70-bebb-293e913b0403"
                   className="absolute bottom-12 right-12 max-sm:hidden"
                 />
-                <img
-                  src="https://github.com/user-attachments/assets/24f55e89-073f-4f60-a8da-9a8bd8f1fb22"
-                  className="absolute top-44 -left-8 w-24 max-sm:hidden"
-                />
+
                 <img
                   src="https://github.com/user-attachments/assets/24f55e89-073f-4f60-a8da-9a8bd8f1fb22"
                   className="absolute bottom-32 left-52 w-24 max-sm:hidden"
                 />
                 <img
-                  src="https://github.com/user-attachments/assets/24f55e89-073f-4f60-a8da-9a8bd8f1fb22"
-                  className="absolute top-52 right-44 rotate-90 w-24 max-sm:hidden"
-                />
-                <img
                   src="https://github.com/user-attachments/assets/a6e369a7-7767-4798-9c20-cb51afc06678"
-                  className="absolute bottom-0 right-0 max-sm:hidden"
+                  className="absolute -bottom-24 right-0 max-sm:hidden"
                 />
                 <img
                   src="https://github.com/user-attachments/assets/ada374a4-ef3a-40c7-a9ce-45233140a854"
@@ -458,7 +451,7 @@ const Registration = () => {
                 />
               </div>
             </div>
-            {!isTimeUp && !isRegistrationsOpen && (
+            {/* {!isTimeUp && !isRegistrationsOpen && (
               <div>
                 <h1 className="text-2xl font-normal text-center max-[400px] mt-20 mb-16 w-full max-w-3xl m-auto">
                   <span className="font-bold text-[#f57d33]">
@@ -502,7 +495,7 @@ const Registration = () => {
                   <span>Seconds</span>
                 </div>
               </div>
-            )}
+            )} */}
             {role !== "CA" && role !== "" && isNext && (
               <div>
                 {/* <h1 className="text-2xl font-normal text-center mt-20 mb-16 w-full max-w-3xl mx-auto">
@@ -548,40 +541,155 @@ const Registration = () => {
               </div>
             )}
             {isRegistrationsOpen && (
-              <div className="shadow-lg rounded-xl p-8 max-w-6xl border-[1px] border-black w-full z-40">
-                <h1 className="text-2xl font-semibold text-center mb-6">
-                  REGISTER
-                </h1>
-                <div className="mb-6">
-                  <label className="text-sm font-medium text-gray-700 flex gap-1 items-center my-2">
-                    CHOOSE YOUR PREFERRED ROLE{" "}
-                    <span className="text-xs text-red-500">(required)</span>
-                  </label>
-                  <select
-                    className="block w-full p-3 border bg-white border-gray-600 rounded-md shadow-sm focus:ring-[#f57d33] focus:border-[#f57d33]"
-                    onChange={handleRoleChange}
-                    value={role}
-                  >
-                    <option value="" disabled>
-                      Which role do you wish to apply for?
-                    </option>
-                    <option value="CA">Campus Ambassador</option>
-                    <option value="Contributor">Contributor</option>
-                    <option value="Mentor">Mentor</option>
-                    <option value="ProjectAdmin">Project Admin</option>
-                  </select>
+              <div className="p-8 max-w-7xl pt-10 w-full z-30">
+                <div className="flex max-lg:flex-col mb-10 justify-between">
+                  <div className="text-left max-lg:text-center mb-6 font-bold text-3xl">
+                    <span className="text-[#f57d33] ">GSSoC 24 Extd</span>{" "}
+                    Registrations
+                  </div>
+                  <div className="w-1/2 text-right max-lg:w-full max-lg:text-center">
+                    Register for GSSoC 24 extended edition as a{" "}
+                    <b>
+                      Contributor, Campus Ambassador, Project Admin, and Mentor
+                    </b>
+                    . Be a part of the Open-Source Revolution.
+                  </div>
                 </div>
-                <div className="mt-6 flex justify-end">
-                  <button
-                    className="bg-[#f57d33] text-white py-2 px-4 rounded-lg shadow hover:bg-[#F26611] w-40"
-                    onClick={handleNext}
-                  >
-                    Next
-                  </button>
+
+                <div className="flex flex-wrap gap-6">
+                  <div className="border py-6 px-5 rounded-2xl shadow-lg flex flex-col h-full bg-[#f7792f] flex-1 min-w-[100%] sm:min-w-[calc(50%-1.5rem)] lg:min-w-[calc(25%-1.5rem)] min-h-[350px] max-xl:min-h-[390px] max-lg:min-h-[340px]">
+                    <div className="text-xl font-bold mb-2 text-white flex items-center justify-between max-xl:text-lg max-lg:text-xl">
+                      <div>CAMPUS AMBASSADOR</div>
+                      <img
+                        src="https://github.com/user-attachments/assets/1ba311df-3cfd-4927-a7f0-13993f626714"
+                        alt="CA"
+                        className="w-14"
+                      />
+                    </div>
+                    <div className="mb-4 bg-white p-2 min-h-[220px] rounded-xl flex flex-col justify-between">
+                      <div className="mb-6 text-base">
+                        <b>Join</b> the movement! Help spread the word about{" "}
+                        <span className="font-bold text-[#f59e29]">
+                          open-source
+                        </span>{" "}
+                        and{" "}
+                        <span className="font-bold text-[#f86f26]">
+                          GSSoC Ext.
+                        </span>{" "}
+                        at your campus.
+                      </div>
+                      <div className="flex justify-center items-center px-4">
+                        <button
+                          className="bg-[#feb106] mb-6 text-white py-2 w-full font-semibold rounded-full shadow-xl shadow-gray-400 m-auto hover:bg-[#ff9a34]"
+                          onClick={() => handleRoleSelectAndNext("CA")}
+                        >
+                          Closed
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="border py-6 px-5 rounded-2xl shadow-lg flex flex-col h-full bg-[#feb106] flex-1 min-w-[100%] sm:min-w-[calc(50%-1.5rem)] lg:min-w-[calc(25%-1.5rem)] min-h-[350px] max-xl:min-h-[390px] max-lg:min-h-[340px]">
+                    <div className="text-xl font-bold mb-2 text-white flex items-center justify-between max-xl:text-lg max-lg:text-xl">
+                      <div>CONTRIBUTOR</div>
+                      <img
+                        src="https://github.com/user-attachments/assets/82c8a348-2594-4fd9-a4f3-46d21732d84e"
+                        alt="Contributor"
+                        className="w-14"
+                      />
+                    </div>
+                    <div className="mb-4 bg-white p-2 min-h-[220px] rounded-xl flex flex-col justify-between">
+                      <div className="mb-6 text-base">
+                        Wait is over! Join{" "}
+                        <span className="font-bold text-[#f86f26]">
+                          GSSoC&apos;24 Extd
+                        </span>{" "}
+                        as a{" "}
+                        <span className="font-bold text-[#f59e29]">
+                          Contributor!
+                        </span>{" "}
+                        Be a part of something bigger by contributing to
+                        open-source projects.
+                      </div>
+                      <div className="flex justify-center items-center px-4">
+                        <button
+                          className="bg-[#f7792f] mb-6 text-white py-2 w-full font-semibold rounded-full shadow-xl shadow-gray-400 m-auto hover:bg-[#F26611]"
+                          onClick={() => handleRoleSelectAndNext("Contributor")}
+                        >
+                          Register
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="border py-6 px-5 rounded-2xl shadow-lg flex flex-col h-full bg-[#f7792f] flex-1 min-w-[100%] sm:min-w-[calc(50%-1.5rem)] lg:min-w-[calc(25%-1.5rem)] min-h-[350px] max-xl:min-h-[390px] max-lg:min-h-[340px]">
+                    <div className="text-xl font-bold mb-2 text-white flex items-center justify-between max-xl:text-lg max-lg:text-xl">
+                      <div>PROJECT ADMIN</div>
+                      <img
+                        src="https://github.com/user-attachments/assets/b8bf7607-a6fe-4753-9fd2-5591e723177c"
+                        alt="Project Admin"
+                        className="w-14"
+                      />
+                    </div>
+                    <div className="mb-4 bg-white p-2 min-h-[220px] rounded-xl flex flex-col justify-between">
+                      <div className="mb-6 text-base">
+                        Want to lead{" "}
+                        <span className="font-bold text-[#f59e29]">
+                          open-source
+                        </span>{" "}
+                        projects and guide contributors across the globe? Submit
+                        Your Projects & Become a{" "}
+                        <span className="font-bold text-[#f86f26]">
+                          GSSoC&apos;24 Extd
+                        </span>{" "}
+                        PA.
+                      </div>
+                      <div className="flex justify-center items-center px-4">
+                        <button
+                          className="bg-[#feb106] mb-6 text-white py-2 w-full font-semibold rounded-full shadow-xl shadow-gray-400 m-auto hover:bg-[#ff9a34]"
+                          onClick={() =>
+                            handleRoleSelectAndNext("ProjectAdmin")
+                          }
+                        >
+                          Register
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div className="border py-6 px-5 rounded-2xl shadow-lg flex flex-col h-full bg-[#feb106] flex-1 min-w-[100%] sm:min-w-[calc(50%-1.5rem)] lg:min-w-[calc(25%-1.5rem)] min-h-[350px] max-xl:min-h-[390px] max-lg:min-h-[340px]">
+                    <div className="text-xl font-bold mb-2 text-white flex items-center justify-between max-xl:text-lg max-lg:text-xl">
+                      <div>MENTOR</div>
+                      <img
+                        src="https://github.com/user-attachments/assets/e695c3f0-0167-436a-a723-59422a766011"
+                        alt="Mentor"
+                        className="w-14"
+                      />
+                    </div>
+                    <div className="mb-4 bg-white p-2 min-h-[220px] rounded-xl flex flex-col justify-between">
+                      <div className="mb-6 text-base">
+                        Ready to share your knowledge and guide developers?
+                        Become a{" "}
+                        <span className="font-bold text-[#f59e29]">Mentor</span>{" "}
+                        at{" "}
+                        <span className="font-bold text-[#f86f26]">
+                          GSSoC&apos;24 Extended!
+                        </span>
+                      </div>
+                      <div className="flex justify-center items-center px-4">
+                        <button
+                          className="bg-[#f7792f] mb-6 text-white py-2 w-full font-semibold rounded-full shadow-xl shadow-gray-400 m-auto hover:bg-[#F26611]"
+                          onClick={() => handleRoleSelectAndNext("Mentor")}
+                        >
+                          Register
+                        </button>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             )}
-            <div className="flex w-full flex-wrap gap-24 max-sm:gap-4 my-10 justify-center z-40 max-lg:justify-center">
+            <div className="flex w-full flex-wrap gap-24 max-sm:gap-4 mb-5 max-sm:mb-14 justify-center z-40 max-lg:justify-center">
               <div className="flex justify-center items-center w-36">
                 <img src="/Sponsors/Vercel.png" alt="" />
               </div>
@@ -631,216 +739,240 @@ const Registration = () => {
               </div>
             </div>
             {role != "CA" ? (
-            <div className="min-h-screen p-10 max-sm:p-2 max-sm:my-10 w-full flex flex-col items-center justify-center z-30">
-              <h1 className="text-2xl font-semibold text-center mb-6">
-                REGISTER FOR GSSOC&apos; EXTD.
-              </h1>
-              <div className="max-w-5xl w-full">
-                <div className="my-2 font-medium">PERSONAL DETAILS</div>
-                <div className="border-[1px] border-gray-400 rounded-lg p-4 w-full bg-gray-100">
-                  <div className="flex max-lg:flex-wrap gap-4 items-center">
-                    <InputField
-                      label="First Name"
-                      name="firstName"
-                      value={formData.firstName}
-                      handleChange={handleInputChange}
-                      error={errors.firstName}
-                      required={true}
-                    />
-
-                    <InputField
-                      label="Middle Name (Optional)"
-                      value={formData.middleName}
-                      name="middleName"
-                      handleChange={handleInputChange}
-                      required={false}
-                    />
-
-                    <InputField
-                      label="Last Name (Optional)"
-                      value={formData.lastName}
-                      name="lastName"
-                      handleChange={handleInputChange}
-                      required={false}
-                    />
-                  </div>
-                  <div className="flex max-lg:flex-wrap gap-4">
-                    <div className="flex-grow">
-                      <SelectField
-                        label="Gender"
-                        value={formData.gender}
-                        name="gender"
-                        required={true}
-                        options={["Select Gender", "Male", "Female", "Others"]}
-                        handleChange={handleInputChange}
-                        error={errors.gender}
-                      />
-                    </div>
-                    <div className="flex-grow-2">
-                      <CountryStateSelect
-                        state={formData.state}
-                        country={formData.country}
-                        onCountryChange={handleCountryChange}
-                        onStateChange={handleStateChange}
-                      />
-                    </div>
-                    <div className="flex-grow">
+              <div className="min-h-screen p-10 max-sm:p-2 max-sm:my-10 w-full flex flex-col items-center justify-center z-30">
+                <h1 className="text-2xl font-semibold text-center mb-6">
+                  REGISTER FOR GSSOC&apos; EXTD.
+                </h1>
+                <div className="max-w-5xl w-full">
+                  <div className="my-2 font-medium">PERSONAL DETAILS</div>
+                  <div className="border-[1px] border-gray-400 rounded-lg p-4 w-full bg-gray-100">
+                    <div className="flex max-lg:flex-wrap gap-4 items-center">
                       <InputField
-                        label="City"
-                        name="city"
-                        value={formData.city}
+                        label="First Name"
+                        name="firstName"
+                        value={formData.firstName}
                         handleChange={handleInputChange}
-                        error={errors.city}
+                        error={errors.firstName}
+                        required={true}
+                      />
+
+                      <InputField
+                        label="Middle Name (Optional)"
+                        value={formData.middleName}
+                        name="middleName"
+                        handleChange={handleInputChange}
+                        required={false}
+                      />
+
+                      <InputField
+                        label="Last Name (Optional)"
+                        value={formData.lastName}
+                        name="lastName"
+                        handleChange={handleInputChange}
+                        required={false}
+                      />
+                    </div>
+                    <div className="flex max-lg:flex-wrap gap-4">
+                      <div className="flex-grow">
+                        <SelectField
+                          label="Gender"
+                          value={formData.gender}
+                          name="gender"
+                          required={true}
+                          options={[
+                            "Select Gender",
+                            "Male",
+                            "Female",
+                            "Others",
+                          ]}
+                          handleChange={handleInputChange}
+                          error={errors.gender}
+                        />
+                      </div>
+                      <div className="flex-grow-2">
+                        <CountryStateSelect
+                          state={formData.state}
+                          country={formData.country}
+                          onCountryChange={handleCountryChange}
+                          onStateChange={handleStateChange}
+                        />
+                      </div>
+                      <div className="flex-grow">
+                        <InputField
+                          label="City"
+                          name="city"
+                          value={formData.city}
+                          handleChange={handleInputChange}
+                          error={errors.city}
+                          required={false}
+                        />
+                      </div>
+                    </div>
+                    <div className="flex max-lg:flex-wrap gap-4">
+                      <InputField
+                        label="College/Office Name"
+                        name="collegeOrOffice"
+                        value={formData.collegeOrOffice}
+                        handleChange={handleInputChange}
+                        error={errors.collegeOrOffice}
+                      />
+                      <SelectField
+                        label="Year"
+                        name="year"
+                        options={[
+                          "Select Year",
+                          "1st Year",
+                          "2nd Year",
+                          "3rd Year",
+                          "4th Year",
+                        ]}
+                        handleChange={handleInputChange}
+                        value={formData.year}
+                        error={errors.year}
+                        required={false}
+                      />
+                      <InputField
+                        label="Field of Study"
+                        name="fieldOfStudy"
+                        value={formData.fieldOfStudy}
+                        handleChange={handleInputChange}
+                        error={errors.fieldOfStudy}
                         required={false}
                       />
                     </div>
                   </div>
-                  <div className="flex max-lg:flex-wrap gap-4">
-                    <InputField
-                      label="College/Office Name"
-                      name="collegeOrOffice"
-                      value={formData.collegeOrOffice}
-                      handleChange={handleInputChange}
-                      error={errors.collegeOrOffice}
-                    />
-                    <SelectField
-                      label="Year"
-                      name="year"
-                      options={[
-                        "Select Year",
-                        "1st Year",
-                        "2nd Year",
-                        "3rd Year",
-                        "4th Year",
-                      ]}
-                      handleChange={handleInputChange}
-                      value={formData.year}
-                      error={errors.year}
-                      required={false}
-                    />
-                    <InputField
-                      label="Field of Study"
-                      name="fieldOfStudy"
-                      value={formData.fieldOfStudy}
-                      handleChange={handleInputChange}
-                      error={errors.fieldOfStudy}
-                      required={false}
-                    />
-                  </div>
-                </div>
-                <div className="max-w-5xl w-full">
-                  <div className="my-2 font-medium">CONTACT DETAILS</div>
-                  <div className="border-[1px] border-gray-400 rounded-lg p-8 w-full z-10 bg-gray-100">
-                    <div className="flex max-lg:flex-wrap gap-4">
-                      <div className="flex-grow">
-                        <InputField
-                          label="Email"
-                          name="email"
-                          value={formData.email}
-                          handleChange={handleInputChange}
-                          error={errors.email}
-                        />
-                      </div>
-                      <div className="mb-6 flex-grow-2">
-                        <label className="block text-sm font-semibold text-gray-800 mb-2">
-                          Phone Number{" "}
-                          <span className="text-xs text-red-500">required</span>
-                        </label>
-                        <PhoneInput
-                          country={"in"}
-                          value={formData.phoneNumber || ""}
-                          onChange={(value, countryData) =>
-                            handlePhoneChange(value, countryData)
-                          }
-                          inputProps={{
-                            name: "phoneNumber",
-                            required: true,
-                            autoFocus: true,
-                            onFocus: handleFocus,
-                            onBlur: handleBlur,
-                          }}
-                          inputStyle={{
-                            width: "100%",
-                            padding: "10px 50px",
-                            border: `1px solid ${
-                              isFocused ? "#ff7e34" : "#000"
-                            }`,
-                            boxShadow: isFocused ? "0 0 0 1px #ff7e34" : "none",
-                            borderRadius: "4px",
-                          }}
-                          buttonStyle={{
-                            border: "1px solid #000",
-                          }}
-                        />
+                  <div className="max-w-5xl w-full">
+                    <div className="my-2 font-medium">CONTACT DETAILS</div>
+                    <div className="border-[1px] border-gray-400 rounded-lg p-8 w-full z-10 bg-gray-100">
+                      <div className="flex max-lg:flex-wrap gap-4">
+                        <div className="flex-grow">
+                          <InputField
+                            label="Email"
+                            name="email"
+                            value={formData.email}
+                            handleChange={handleInputChange}
+                            error={errors.email}
+                          />
+                        </div>
+                        <div className="mb-6 flex-grow-2">
+                          <label className="block text-sm font-semibold text-gray-800 mb-2">
+                            Phone Number{" "}
+                            <span className="text-xs text-red-500">
+                              required
+                            </span>
+                          </label>
+                          <PhoneInput
+                            country={"in"}
+                            value={formData.phoneNumber || ""}
+                            onChange={(value, countryData) =>
+                              handlePhoneChange(value, countryData)
+                            }
+                            inputProps={{
+                              name: "phoneNumber",
+                              required: true,
+                              autoFocus: true,
+                              onFocus: handleFocus,
+                              onBlur: handleBlur,
+                            }}
+                            inputStyle={{
+                              width: "100%",
+                              padding: "10px 50px",
+                              border: `1px solid ${
+                                isFocused ? "#ff7e34" : "#000"
+                              }`,
+                              boxShadow: isFocused
+                                ? "0 0 0 1px #ff7e34"
+                                : "none",
+                              borderRadius: "4px",
+                            }}
+                            buttonStyle={{
+                              border: "1px solid #000",
+                            }}
+                          />
 
-                        {errors.phoneNumber && (
-                          <span className="mt-1 text-xs text-red-600">
-                            {errors.phoneNumber}
-                          </span>
-                        )}
+                          {errors.phoneNumber && (
+                            <span className="mt-1 text-xs text-red-600">
+                              {errors.phoneNumber}
+                            </span>
+                          )}
+                        </div>
+                      </div>
+                      <div className="flex max-lg:flex-wrap gap-4">
+                        <InputField
+                          label="GitHub Profile URL"
+                          name="gitHubProfileUrl"
+                          value={formData.gitHubProfileUrl}
+                          handleChange={handleInputChange}
+                          error={errors.gitHubProfileUrl}
+                        />
+                        <InputField
+                          label="LinkedIn Profile URL"
+                          name="linkedInProfileUrl"
+                          value={formData.linkedInProfileUrl}
+                          handleChange={handleInputChange}
+                          error={errors.linkedInProfileUrl}
+                        />
+                        <InputField
+                          label="Discord Username (If none, enter N/A)"
+                          name="discordUsername"
+                          value={formData.discordUsername}
+                          handleChange={handleInputChange}
+                          error={errors.discordUsername}
+                        />
                       </div>
                     </div>
-                    <div className="flex max-lg:flex-wrap gap-4">
-                      <InputField
-                        label="GitHub Profile URL"
-                        name="gitHubProfileUrl"
-                        value={formData.gitHubProfileUrl}
-                        handleChange={handleInputChange}
-                        error={errors.gitHubProfileUrl}
-                      />
-                      <InputField
-                        label="LinkedIn Profile URL"
-                        name="linkedInProfileUrl"
-                        value={formData.linkedInProfileUrl}
-                        handleChange={handleInputChange}
-                        error={errors.linkedInProfileUrl}
-                      />
-                      <InputField
-                        label="Discord Username (If none, enter N/A)"
-                        name="discordUsername"
-                        value={formData.discordUsername}
-                        handleChange={handleInputChange}
-                        error={errors.discordUsername}
-                      />
+                  </div>
+                  <div className="flex gap-8 max-sm:gap-2 max-sm:justify-center justify-end">
+                    <div className="mt-6 flex justify-end">
+                      <button
+                        className="border-[#f57d33] border-2 font-bold  text-[#f57d33] py-2 px-4 rounded-lg shadow hover:bg-[#F26611] hover:text-white w-40"
+                        onClick={handleBack}
+                      >
+                        Back
+                      </button>
                     </div>
-                  </div>
-                </div>
-                <div className="flex gap-8 max-sm:gap-2 max-sm:justify-center justify-end">
-                  <div className="mt-6 flex justify-end">
-                    <button
-                      className="border-[#f57d33] border-2 font-bold  text-[#f57d33] py-2 px-4 rounded-lg shadow hover:bg-[#F26611] hover:text-white w-40"
-                      onClick={handleBack}
-                    >
-                      Back
-                    </button>
-                  </div>
-                  <div className="mt-6 flex justify-end">
-                    <button
-                      className="bg-[#f57d33] text-white font-bold py-2 px-4 rounded-lg shadow hover:bg-[#F26611] w-40"
-                      onClick={handleNext}
-                    >
-                      Next
-                    </button>
+                    <div className="mt-6 flex justify-end">
+                      <button
+                        className="bg-[#f57d33] text-white font-bold py-2 px-4 rounded-lg shadow hover:bg-[#F26611] w-40"
+                        onClick={handleNext}
+                      >
+                        Next
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
-            </div>) : (
-      <div className="min-h-screen p-10 max-sm:p-2 max-sm:my-10 w-full flex flex-col items-center justify-center z-30">
-        <img src="https://github.com/user-attachments/assets/6ba0f38c-a28d-4d22-835a-93779f126e46" alt="Closed" width={240}/>
-      <h1 className="text-2xl font-semibold text-center mb-6">
-        <span className="text-[#f57d33] font-bold">Registrations</span> for  <span className="text-[#f57d33] font-bold">Campus Ambassadors</span> in GSSoC 2024 Extd are <span className="text-[#f57d33] font-bold">closed</span>.
-      </h1>
-      <p className="text-lg text-center mb-6 w-full max-w-2xl">
-      We warmly invite you to join us as a Contributor and be part of GSSoC 2024 Extended. We encourage you to register and make an impact!
-      </p>
-      <button
-        className="bg-[#f57d33] text-white font-bold py-2 px-4 rounded-lg shadow hover:bg-[#F26611]"
-        onClick={handleBack}
-      >
-        Go Back
-      </button>
-      </div>
-    )}
+            ) : (
+              <div className="min-h-screen p-10 max-sm:p-2 max-sm:my-10 w-full flex flex-col items-center justify-center z-30">
+                <img
+                  src="https://github.com/user-attachments/assets/6ba0f38c-a28d-4d22-835a-93779f126e46"
+                  alt="Closed"
+                  width={240}
+                />
+                <h1 className="text-2xl font-semibold text-center mb-6">
+                  <span className="text-[#f57d33] font-bold">
+                    Registrations
+                  </span>{" "}
+                  for{" "}
+                  <span className="text-[#f57d33] font-bold">
+                    Campus Ambassadors
+                  </span>{" "}
+                  in GSSoC 2024 Extd are{" "}
+                  <span className="text-[#f57d33] font-bold">closed</span>.
+                </h1>
+                <p className="text-lg text-center mb-6 w-full max-w-2xl">
+                  We warmly invite you to join us as a Contributor and be part
+                  of GSSoC 2024 Extended. We encourage you to register and make
+                  an impact!
+                </p>
+                <button
+                  className="bg-[#f57d33] text-white font-bold py-2 px-4 rounded-lg shadow hover:bg-[#F26611]"
+                  onClick={handleBack}
+                >
+                  Go Back
+                </button>
+              </div>
+            )}
           </>
         );
       case 3:
@@ -916,7 +1048,9 @@ const Registration = () => {
                       <InputField
                         label="REFERRAL CODE (If none, enter N/A)"
                         name="referral"
-                        handleChange={router?.query?.referral ?()=>{} :handleInputChange}
+                        handleChange={
+                          router?.query?.referral ? () => {} : handleInputChange
+                        }
                         error={errors.referral}
                         required={false}
                         value={formData.referral || ""}
@@ -967,7 +1101,9 @@ SHARE YOUR EXPERIENCE BRIEFLY"
                       <InputField
                         label="REFERRAL CODE (If none, enter N/A)"
                         name="referral"
-                        handleChange={router?.query?.referral ?()=>{} :handleInputChange}
+                        handleChange={
+                          router?.query?.referral ? () => {} : handleInputChange
+                        }
                         error={errors.referral}
                         required={false}
                         value={formData.referral || ""}
@@ -1073,7 +1209,9 @@ SHARE YOUR EXPERIENCE BRIEFLY"
                       <InputField
                         label="REFERRAL CODE (If none, enter N/A)"
                         name="referral"
-                        handleChange={router?.query?.referral ?()=>{} :handleInputChange}
+                        handleChange={
+                          router?.query?.referral ? () => {} : handleInputChange
+                        }
                         error={errors.referral}
                         required={false}
                         gap={"mb-2"}
@@ -1122,7 +1260,9 @@ SHARE YOUR EXPERIENCE BRIEFLY"
                       <InputField
                         label="REFERRAL CODE (If none, enter N/A)"
                         name="referral"
-                        handleChange={router?.query?.referral ?()=>{} :handleInputChange}
+                        handleChange={
+                          router?.query?.referral ? () => {} : handleInputChange
+                        }
                         error={errors.referral}
                         required={false}
                         value={formData.referral || ""}

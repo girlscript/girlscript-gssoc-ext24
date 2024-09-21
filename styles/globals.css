@@ -716,21 +716,19 @@ html {
 .badge-name{
   font-family: 'Roboto', sans-serif;
   position: absolute;
-  top: 63.5%;
+  top: 63%;
   left: 26.3%;
   text-align: center;
   width: 35%;
   max-height: 60px;
   transform: translate(-50%, -50%);
-  font-weight: 750;
-  /* border: 2px solid red; */
+  font-weight: 600;
 }
 
 .unverified-badge-name{
   position: absolute;
   top: 63.5%;
-  left: 24.2%;
-  /* border: 2px solid red; */
+  left: 26.2%;
   text-align: center;
   width: 25%;
   max-height: 60px;
@@ -739,21 +737,16 @@ html {
 
 .badge-github{
   position: absolute;
-  top: 74.6%;
-  left: 32.2%;
+  top: 75.6%;
+  left:26.2%;
   text-align: left;
-  width: 25%;
   transform: translate(-50%, -50%);
-  /* border: 2px solid red; */
 }
-
 .unverified-badge-github{
   position: absolute;
   top: 75.7%;
-  /* border: 2px solid red; */
-  left: 27.9%;
+  left: 25.9%;
   text-align: left;
-  width: 18%;
   transform: translate(-50%, -50%);
 }
 .image-wrapper{
