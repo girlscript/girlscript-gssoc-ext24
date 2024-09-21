@@ -9,7 +9,7 @@ import EllipseBox2 from "../components/BgAssets/EllipseBox2";
 import EllipseBox from "../components/BgAssets/EllipseBox";
 import SmallHex from "../components/BgAssets/SmallHex";
 import SocialFollow from "../components/homepage/SocialFollow";
-import Image from "next/image";
+import Image from "next/legacy/image";
 
 function Faq() {
   const [data] = useState(accordionData);

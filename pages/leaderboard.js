@@ -16,7 +16,7 @@ import { faList } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useTheme } from "next-themes";
 import Head from "next/head";
-import Image from "next/image";
+import Image from "next/legacy/image";
 import { Tooltip } from "react-tooltip";
 import React, { useCallback, useEffect, useState } from "react";
 import Confetti from "react-confetti";
