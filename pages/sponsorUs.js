@@ -129,14 +129,14 @@ function SponsorUs() {
             />
           </div>
         </div>
-        <div className="flex min-h-screen dark:text-white flex-col justify-center items-center max-w-6xl mx-auto relative w-full py-20 max-sm:py-24 px-4 sm:px-6 lg:px-8">
+        <div className="flex font-sans min-h-screen dark:text-white flex-col justify-center items-center max-w-6xl mx-auto relative w-full py-20 max-sm:py-24 px-4 sm:px-6 lg:px-8">
           <div className="text-lg text-center font-medium italic px-16 max-sm:px-8 mb-2">
             GirlScript Summer of Code is a platform where students learn,
             contribute, and grow in the field of open-source development. By
             sponsoring GSSoC, you help empower future tech innovators, promote
             diversity, and contribute to creating a more inclusive community.
           </div>
-          <div className="text-xl my-8 text-center font-medium dark:text-white">
+          <div className="text-xl font-sans my-8 text-center font-medium dark:text-white">
             Visit{" "}
             <span className="text-primary_orange-0 hover:underline">
               <Link href="/whySponsorUs">WHY SPONSOR US?</Link>
@@ -146,7 +146,7 @@ function SponsorUs() {
           <div className="text-3xl my-8 text-center font-medium">
             OUR PREVIOUS SPONSORS
           </div>
-          <div className="flex w-full flex-wrap gap-12 justify-between max-lg:justify-center">
+          <div className="flex w-full font-sans flex-wrap gap-12 justify-between max-lg:justify-center">
             <div className="flex justify-center items-center w-36 h-40">
               <img src="/Sponsors/Postman.png" alt="Postman" />
             </div>
@@ -166,10 +166,10 @@ function SponsorUs() {
               />
             </div>
           </div>
-          <div className="text-3xl my-8 text-center font-medium">
+          <div className="text-3xl font-sans my-8 text-center font-medium">
             WISH TO CONTRIBUTE IN OUR ENDEAVOUR? SPONSOR US
           </div>
-          <div className="space-y-4">
+          <div className="space-y-4 font-sans">
             <form onSubmit={handleSubmit}>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
                 <div>
@@ -288,11 +288,11 @@ function SponsorUs() {
               </div>
             </form>
           </div>
-          <div className="mt-10">
+          <div className="mt-10 font-sans">
             <div className="flex flex-col justify-center items-center gap-5 p-5">
               <h5 className="font-bold text-lg text-center">
                 Want to support our organization? Sponsor us on GitHub
-                through github sponsors
+                through github sponsors
               </h5>
               <a
                 href="https://github.com/sponsors/GSSoC24"
@@ -309,7 +309,7 @@ function SponsorUs() {
         </div>
 
         {showPopup && (
-          <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+          <div className="fixed font-sans inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
             <div className="bg-white p-8 rounded-lg shadow-lg text-center relative border-2 border-black border-dotted">
               <div className="h-40 overflow-hidden flex items-center justify-center">
                 <img

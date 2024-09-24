@@ -120,7 +120,7 @@ export default function Stats() {
   };
 
   return (
-    <div className="container m-auto transition-colors mt-12 mb-0 md:mb-12 p-8 sm:px-10 md:px-10 lg:px-20 2xl:px-32 dark:bg-darkmode_gray-0 dark:transition-colors">
+    <div className="container font-sans m-auto transition-colors mt-12 mb-0 md:mb-12 p-8 sm:px-10 md:px-10 lg:px-20 2xl:px-32 dark:bg-darkmode_gray-0 dark:transition-colors">
       <div className="items-center justify-center">
         <div className="font-sans text-center text-2xl font-extrabold">
           <div className="text-black dark:text-white flex flex-col text-4xl text-center font-extrabold mb-10 underline underline-offset-4 decoration-primary_orange-0">

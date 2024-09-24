@@ -17,7 +17,7 @@ function schedule() {
           href="https://user-images.githubusercontent.com/63473496/153487849-4f094c16-d21c-463e-9971-98a8af7ba372.png"
         /> */}
       </Head>
-      <div className="hidden lg:block 3xl:hidden">
+      <div className="hidden lg:block 3xl:hidden font-sans">
         <div className="hor absolute top-32 left-0 right-0">
           <img
             src="https://user-images.githubusercontent.com/64256342/153624332-dee821db-58d5-4aa2-bcd4-7ecdd76d4e76.svg"

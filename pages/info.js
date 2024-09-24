@@ -8,7 +8,7 @@ function info() {
         </title>
         <meta name="description" content="GirlScript Summer of Code Certificates" />
       </Head>
-      <div className="container transition-colors mx-auto mt-12 mb-0 md:mb-12 p-8 sm:px-10 md:px-12 lg:px-40 2xl:px-50 dark:bg-darkmode_gray-0 dark:transition-colors ">
+      <div className="container font-sans transition-colors mx-auto mt-12 mb-0 md:mb-12 p-8 sm:px-10 md:px-12 lg:px-40 2xl:px-50 dark:bg-darkmode_gray-0 dark:transition-colors ">
         <div className="items-center justify-center">
           <div className="font-sans text-center text-2xl font-extrabold">
             <p className="text-black dark:text-white text-4xl text center font-extrabold mb-10 underline underline-offset-4 decoration-primary_orange-0">
@@ -17,7 +17,7 @@ function info() {
             </p>
           </div>
         </div>
-        <div className="first-section mb-10 flex flex-col md:flex-row justify-between flex-auto items-center flex-wrap mb-24">
+        <div className="first-section flex flex-col md:flex-row justify-between flex-auto items-center flex-wrap mb-24">
           <div data-aos="flip-left" data-aos-duration="500">
             <img
               src="https://raw.githubusercontent.com/girlscript/gssoc-assets/07bf179210769ea9a280f7e87e1f6e5cdc464953/Info/Triangle.svg"

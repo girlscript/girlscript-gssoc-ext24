@@ -35,7 +35,7 @@ const UploadField = ({ name, label, onChange, preview, setuploadedFile }) => {
   };
 
   return (
-    <div className="upload-field">
+    <div className="upload-field font-sans">
       <label
         htmlFor={name}
         className="bg-[#F86F26] px-4 rounded-lg py-2 cursor-pointer text-white font-semibold"
@@ -541,7 +541,7 @@ const Registration = () => {
               </div>
             )}
             {isRegistrationsOpen && (
-              <div className="p-8 max-w-7xl pt-10 w-full z-30">
+              <div className="p-8 max-w-7xl pt-10 w-full z-30 font-sans">
                 <div className="flex max-lg:flex-col mb-10 justify-between">
                   <div className="text-left max-lg:text-center mb-6 font-bold text-3xl">
                     <span className="text-[#f57d33] ">GSSoC 24 Extd</span>{" "}
@@ -739,7 +739,7 @@ const Registration = () => {
               </div>
             </div>
             {role != "CA" ? (
-              <div className="min-h-screen p-10 max-sm:p-2 max-sm:my-10 w-full flex flex-col items-center justify-center z-30">
+              <div className="min-h-screen font-sans p-10 max-sm:p-2 max-sm:my-10 w-full flex flex-col items-center justify-center z-30">
                 <h1 className="text-2xl font-semibold text-center mb-6">
                   REGISTER FOR GSSOC&apos; EXTD.
                 </h1>
@@ -943,7 +943,7 @@ const Registration = () => {
                 </div>
               </div>
             ) : (
-              <div className="min-h-screen p-10 max-sm:p-2 max-sm:my-10 w-full flex flex-col items-center justify-center z-30">
+              <div className="min-h-screen font-sans p-10 max-sm:p-2 max-sm:my-10 w-full flex flex-col items-center justify-center z-30">
                 <img
                   src="https://github.com/user-attachments/assets/6ba0f38c-a28d-4d22-835a-93779f126e46"
                   alt="Closed"
@@ -999,7 +999,7 @@ const Registration = () => {
               </div>
             </div>
 
-            <div className="min-h-screen w-full p-6 md:p-10 bg-gray-100 flex flex-col items-center justify-center">
+            <div className="min-h-screen font-sans w-full p-6 md:p-10 bg-gray-100 flex flex-col items-center justify-center">
               <h1 className="text-2xl md:text-3xl font-medium text-center mb-8 md:mb-12 z-20">
                 {role === "CA"
                   ? "BECOME A CAMPUS AMBASSADOR"
@@ -1010,7 +1010,7 @@ const Registration = () => {
                   : "BECOME A MENTOR"}
               </h1>
 
-              <div className="flex flex-col justify-center w-full md:flex-row items-center">
+              <div className="flex flex-col font-sans justify-center w-full md:flex-row items-center">
                 <div className="w-72 h-72 md:w-96 md:h-[450px] z-30 my-12">
                   {role === "CA" && (
                     <img src="./register/caBanner.webp" alt="Banner" />
@@ -1334,7 +1334,7 @@ SHARE YOUR EXPERIENCE BRIEFLY"
           content="Register of GirlScript Summer of Code"
         />
       </Head>
-      <div className="min-h-screen p-10 bg-gray-100 relative flex flex-col gap-10 items-center justify-center">
+      <div className="min-h-screen font-sans p-10 bg-gray-100 relative flex flex-col gap-10 items-center justify-center">
         {renderForm()}
         {showSuccess && (
           <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">

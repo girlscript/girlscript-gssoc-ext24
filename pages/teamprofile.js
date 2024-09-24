@@ -93,7 +93,7 @@ const TeamMember = () => {
 
     if (!member) {
         return (
-            <div className="flex flex-col items-center justify-center min-h-72 p-4 dark:text-white">
+            <div className="flex flex-col font-sans items-center justify-center min-h-72 p-4 dark:text-white">
                 <p className="text-black text-center text-4xl font-semibold mb-4 dark:text-white">
                     Team Member Not Found
                 </p>
@@ -297,7 +297,7 @@ const TeamMember = () => {
                     content="GirlScript Summer of Code Team"
                 />
             </Head>
-            <div className="container mx-auto p-6">
+            <div className="container font-sans mx-auto p-6">
                 {/* 2 cols flex containr */}
                 <div className="flex flex-col lg:flex-row justify-center items-start lg:space-x-10">
                     {/* Left Col */}

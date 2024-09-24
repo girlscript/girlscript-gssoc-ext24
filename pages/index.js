@@ -97,8 +97,8 @@ export default function Home() {
           <div className="basis-1/2 relative">
             <div className="text-black dark:text-white text-6xl font-sans font-semibold 2.25rem 3rem mb-10">
             <span className="text-primary_orange-0">GSSoC </span>
-              2024 Extd
-              <div className="mt-2">is here!</div>
+              2024 Extd is here!
+              {/* <div className="mt-2">is here!</div> */}
             </div>
             <div className="font-serif font-medium text-2xl 1.5rem 2rem text-gray-800 dark:text-white">
               GirlScript Summer of Code Extd is a 1-month long

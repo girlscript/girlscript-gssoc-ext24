@@ -15,7 +15,7 @@ const ProjectModal = ({ currProject }) => {
   // const [scrollBehavior, setScrollBehavior] = React.useState("inside");
   const btnRef = React.useRef();
   return (
-    <div className="w-full absolute bottom-0">
+    <div className="w-full absolute bottom-0 font-sans">
       <button ref={btnRef} onClick={onOpen}
         className=" bg-gradient-to-b from-primary_orange-0 to-orange-600 text-lg text-white dark:text-black font-medium rounded-b-md py-1 hover:bg-gradient-to-t hover:from-primary_orange-0 hover:to-orange-600 w-full"
       >

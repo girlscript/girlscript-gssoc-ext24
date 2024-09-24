@@ -6,8 +6,8 @@ module.exports = {
   darkMode: "class",
   theme: {
     fontFamily: {
-      serif: ["Rubik", "ui-sans-serif"],
-      sans: ["Fira Code", "monospace"],
+      serif: ["Poppins", "ui-sans-serif"],
+      sans: ["Poppins", "monospace"],
     },
     extend: {
       colors: {

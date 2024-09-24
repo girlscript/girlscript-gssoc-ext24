@@ -46,7 +46,7 @@ const Event = () => {
       </p>
 
       {/* Desktop view */}
-      <div className="hidden md:block w-full">
+      <div className="hidden font-sans md:block w-full">
         <Chrono
           items={Event}
           theme={{

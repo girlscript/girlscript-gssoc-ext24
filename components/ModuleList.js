@@ -10,7 +10,7 @@ export default function ModuleList({ modules = [], onSelectModule }) {
     }
 
     return (
-        <div className="space-y-4">
+        <div className="space-y-4 font-sans">
             {modules.map((module) => (
                 <motion.div
                     key={module.id}

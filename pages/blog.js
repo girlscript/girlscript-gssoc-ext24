@@ -54,7 +54,7 @@ const Blog = () => {
         <SliderBlog />
       </div>
       <Spacer mt={20} />
-      <div className="flex flex-row justify-center flex-wrap items-center gap-x-32 gap-y-10 w-100">
+      <div className="flex flex-row justify-center flex-wrap items-center gap-x-32 gap-y-10 w-100 font-sans">
         {blogs.map((curElem, i) => {
           return (
             <>

@@ -446,7 +446,7 @@ const BadgeID_Comp = (props) => {
           </h5>
         </div>
       </div>
-      <h6 id="no-mobile-alert" className="text-black dark:text-white">
+      <h6 id="no-mobile-alert" className="text-black dark:text-white font-sans">
         * Please download the badge certificate on the desktop website
       </h6>
       <Spacer mt={20} />

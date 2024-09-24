@@ -23,7 +23,7 @@ const Layout = ({ children }) => {
   };
   if (router.pathname != "/comingsoon") {
     return (
-      <div className="transition-colors dark:bg-darkmode_gray-0 dark:transition-colors">
+      <div className="transition-colors font-sans dark:bg-darkmode_gray-0 dark:transition-colors">
         <Navbar />
         {showPopup && router.pathname!="/registration" && router.pathname!=="/gssoc_academy" && <PopupBanner onClose={handleClosePopup} />} {children}
         <div className="hidden lg:block">

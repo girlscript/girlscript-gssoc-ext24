@@ -30,7 +30,7 @@ const Team = () => {
           href="https://user-images.githubusercontent.com/63473496/153487849-4f094c16-d21c-463e-9971-98a8af7ba372.png"
         /> */}
       </Head>
-      <div className="items-center justify-center">
+      <div className="items-center justify-center font-sans">
         <div className="font-sans text-center text-2xl font-extrabold text-black-100">
           <div className="text-primary_orange-0 dark:text-white font-sans text-3xl md:text-5xl text center font-extrabold flex wrap justify-center flex-col md:flex-row mb-10 underline decoration-orange-500  underline-offset-8">
             <h1 className="text-primary_orange-0">Meet the&nbsp;</h1>
@@ -42,7 +42,7 @@ const Team = () => {
         </div>
       </div>
       <Spacer mt={10} />
-      <div className="flex flex-row justify-center flex-wrap items-center gap-5">
+      <div className="flex font-sans flex-row justify-center flex-wrap items-center gap-5">
       <a>
           <button
             className="bg-gradient-to-b from-primary_orange-0 to-orange-600 text-lg text-white dark:text-black font-medium hover:bg-gradient-to-t hover:from-primary_orange-0 hover:to-orange-600 text-md px-10 py-3 rounded md:text-2xl md:py-6"
@@ -101,7 +101,7 @@ const Team = () => {
         </a>
       </div>
       <Spacer mt={20} />
-      <div className="flex flex-row justify-center flex-wrap items-center gap-x-40 gap-y-10 w-100">
+      <div className="flex flex-row font-sans justify-center flex-wrap items-center gap-x-40 gap-y-10 w-100">
         {users.map((curElem, i) => {
           return (
             <>

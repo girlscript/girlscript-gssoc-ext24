@@ -146,11 +146,11 @@ const CALeaderboard = () => {
     return orderedData.map((user, index) => (
       <div
         key={index}
-        className={`py-5 px-0 xl:pb-12 xl:px-24 xl:pt-0 text-center ${
+        className={`py-5 px-0 xl:pb-12 xl:px-24 xl:pt-0 text-center font-sans ${
           user.rank === 1 ? "text-2xl" : "text-base"
         }`}
       >
-        <div className="flex md:flex-row justify-between gap-y-1 gap-x-1 md:gap-x-2 items-center my-10">
+        <div className="flex font-sans md:flex-row justify-between gap-y-1 gap-x-1 md:gap-x-2 items-center my-10">
           <div
             className={`bg-white shadow-2xl dark:bg-black rounded-md px-0 sm:px-3 py-2 md:px-16 lg:py-4 relative inline-block ${
               user.rank === 1 ? "w-36 md:w-auto" : "w-28 md:w-auto"
@@ -195,7 +195,7 @@ const CALeaderboard = () => {
       </Head>
       {isLoading && (
         <div className="loader-div">
-          <div className="overlay dark:bg-darkmode_gray-0"></div>
+          <div className="overlay dark:bg-darkmode_gray-0 font-sans"></div>
           <div className="loader-group-container">
             <div className="loader-group dark:bg-black">
               <Spinner
@@ -212,7 +212,7 @@ const CALeaderboard = () => {
         </div>
       )}
       {showConfetti && <Confetti width={windowWidth} height={windowHeight} />}
-      <div className="items-center justify-center mt-20">
+      <div className="items-center font-sans justify-center mt-20">
         <div className="font-sans text-center text-md font-extrabold text-black-100 mt-5">
           <div className="flex justify-center mb-5">
             <button
@@ -222,7 +222,7 @@ const CALeaderboard = () => {
             </button>
           </div>
           <div className="text-primary_orange-0 dark:text-white font-sans text-3xl md:text-5xl text center font-extrabold flex wrap justify-center flex-col md:flex-row mb-10 underline decoration-orange-500  underline-offset-8">
-            <h1 className="text-primary_orange-0 mt-5">
+            <h1 className="text-primary_orange-0 mt-5 font-sans">
               Top Campus Ambassadors&nbsp;
             </h1>
           </div>
@@ -230,7 +230,7 @@ const CALeaderboard = () => {
       </div>
       <div className="flex justify-center">{renderTopThree()}</div>
       <Spacer mt={10} />
-      <div className="flex mb-5">
+      <div className="flex mb-5 font-sans">
         <div className="input-group relative flex flex-wrap items-stretch w-[80%] m-auto">
           <span className="relative flex items-center w-1/2 justify-start">
             <label className="mr-2 whites-nowrap text-gray-900 dark:text-gray-200 font-large text-xxl hover:text-gray-400">
@@ -251,7 +251,7 @@ const CALeaderboard = () => {
               rows per page
             </label>
           </span>
-          <span className="relative flex w-1/2 justify-end">
+          <span className="relative flex w-1/2 justify-end font-sans">
             <span className="relative search-container flex w-full justify-end">
               <div className="relative flex search-container">
                 <input
@@ -276,7 +276,7 @@ const CALeaderboard = () => {
           </span>
         </div>
       </div>
-      <div className="bg-sky-100 dark:bg-orange-200 px-1.5 py-1.5 rounded-md w-[80%] text-center m-auto mb-3">
+      <div className="bg-sky-100 font-sans dark:bg-orange-200 px-1.5 py-1.5 rounded-md w-[80%] text-center m-auto mb-3">
         <p className="text-sky-700 dark:text-orange-900 text-sm">
           {isLoading === false && lastupdated !== "" && (
             <>
@@ -297,7 +297,7 @@ const CALeaderboard = () => {
         </p>
       </div>
 
-      <div className="w-[80%] m-auto overflow-x-auto">
+      <div className="w-[80%] font-sans m-auto overflow-x-auto">
         <div className="table w-full">
           <div className="table-header-group">
             <div className="table-row">
@@ -361,7 +361,7 @@ const CALeaderboard = () => {
         )}
       </div>
       {!isLoading && isClient && searchData.length > 0 && (
-        <div className="pagination-holder mb-20">
+        <div className="font-sans pagination-holder mb-20">
           <div className="flex sm:space-y-4 justify-between items-center w-[80%] m-auto py-4">
             {/* Left side for current range */}
             <div className="text-gray-700 dark:text-gray-300 md:text-base md:text-left sm:text-sm">
@@ -372,7 +372,7 @@ const CALeaderboard = () => {
             </div>
 
             {/* Center for Page Numbers */}
-            <div className="flex justify-center w-full md:w-auto">
+            <div className="flex font-sans justify-center w-full md:w-auto">
               <Pagination
                 innerClass={
                   theme === "dark" ? "dark-theme pagination" : "pagination"
@@ -389,7 +389,7 @@ const CALeaderboard = () => {
             </div>
 
             {/* Right side for Jump to page */}
-            <div className="flex items-center justify-center w-full md:w-auto">
+            <div className="flex font-sans items-center justify-center w-full md:w-auto">
               <input
                 type="number"
                 placeholder="Jump to page"
@@ -405,7 +405,7 @@ const CALeaderboard = () => {
         </div>
       )}
       {!isLoading && searchData.length === 0 && (
-        <div className="text-center text-xl mt-10">
+        <div className="text-center font-sans text-xl mt-10">
           No entries found for the selected year.
         </div>
       )}

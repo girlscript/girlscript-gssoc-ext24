@@ -72,7 +72,7 @@ function Contact() {
         }
       `}</style>
 
-        <div className="text-[#FF7F0D] text-center">
+        <div className="text-[#FF7F0D] text-center font-sans">
           <h1 className="text-4xl font-bold my-2 animated-text">
             Contact Us
           </h1>
@@ -82,7 +82,7 @@ function Contact() {
         </div>
 
 
-        <div className="bg-white dark:bg-gray-800 p-3 gap-10 md:shadow-[0_0_20px_3px_rgba(0,0,0,0.1)] rounded-lg md:flex items-center justify-between my-10">
+        <div className="bg-white font-sans dark:bg-gray-800 p-3 gap-10 md:shadow-[0_0_20px_3px_rgba(0,0,0,0.1)] rounded-lg md:flex items-center justify-between my-10">
           <div className="relative">
             <div className="md:absolute top-10 z-10 left-0">
               <div className="w-full py-6 md:py-0 bg-[#FF7F0D] md:bg-transparent rounded-lg">
