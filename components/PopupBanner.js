@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const PopupBanner = ({ onClose }) => {
   return (
-    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
+    <div className="fixed font-sans inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50">
       <div className="bg-white p-8 rounded-lg relative shadow-lg text-center animate-fadeIn w-full max-w-xl">
         <div className="relative w-full h-64">
           <img

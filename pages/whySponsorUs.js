@@ -15,7 +15,7 @@ function WhySponsorUs() {
           content="Why Sponsor Us of GirlScript Summer of Code"
         />
       </Head>
-      <div className="w-full h-full relative">
+      <div className="w-full font-sans h-full relative">
         <div className="flex flex-col items-center mx-auto relative w-full py-12 px-3 sm:px-5 lg:px-7">
           <h2 className="text-xl underline sm:text-3xl lg:text-4xl font-bold text-center text-primary_orange-0 max-sm:text-3xl sm:max-sm:text-4xl lg:max-sm:text-3xl">
             Why Sponsor Us?

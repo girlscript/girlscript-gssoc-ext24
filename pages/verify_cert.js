@@ -91,7 +91,7 @@ const Cert = () => {
           content="GirlScript Summer of Code Certificates"
         />
       </Head>
-      <div className="items-center justify-center">
+      <div className="items-center justify-center font-sans">
         <div className="font-sans text-center text-2xl font-extrabold text-black-100">
           <div className="text-primary_orange-0 dark:text-white font-sans text-3xl md:text-5xl text center font-extrabold flex wrap justify-center flex-col md:flex-row mb-10 underline decoration-orange-500  underline-offset-8">
             <h1 className="text-primary_orange-0">Verify&nbsp;</h1>
@@ -100,7 +100,7 @@ const Cert = () => {
         </div>
       </div>
       <Spacer mt={20} />
-      <div className="flex flex-col bg-white shadow-2xl dark:bg-black mb-10 rounded-md mx-2 sm:mx-10 md:mx-10 lg:mx-20 px-10 py-2">
+      <div className="flex flex-col font-sans bg-white shadow-2xl dark:bg-black mb-10 rounded-md mx-2 sm:mx-10 md:mx-10 lg:mx-20 px-10 py-2">
         <label className="text-black dark:text-primary_orange-0 font-semibold mt-3 text-lg">
           Enter Registered Email*
         </label>

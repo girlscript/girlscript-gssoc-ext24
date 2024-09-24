@@ -26,7 +26,7 @@ function Faq() {
         />
       </Head>
 
-      <div className="hidden -z-10 lg:block 3xl:hidden pt-12">
+      <div className="hidden font-sans -z-10 lg:block 3xl:hidden pt-12">
         <div className="absolute bottom-[60rem] right-0">
           <img
             src="https://user-images.githubusercontent.com/64256342/152650376-d285b39d-3b06-4c46-afad-c15b90074358.svg"
@@ -54,7 +54,7 @@ function Faq() {
       </div>
       <SocialFollow />
 
-      <section className="flex flex-col mb-24 items-center">
+      <section className="flex flex-col mb-24 items-center font-sans">
         <div className="w-3/4 flex justify-between items-center rounded-2xl flex-wrap mb-24 bg-[#FFECDE] dark:bg-[#1A1A1B]">
           <div className="dark:bg-black rounded-2xl basis-full p-6 md:basis-6/12 md:order-last lg:basis-1/2 lg:order-last relative">
             <div className="text-black dark:text-white font-semibold text-4xl 2.25rem 3rem mb-5 font-sans">

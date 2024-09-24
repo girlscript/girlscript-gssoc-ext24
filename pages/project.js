@@ -288,7 +288,7 @@ const Project = () => {
         /> */}
       </Head>
       <section>
-      <div className="flex flex-col items-center w-full gap-2">
+      <div className="flex flex-col items-center w-full gap-2 font-sans">
           <div className="text-primary_orange-0 mt-4 dark:text-white font-sans text-3xl md:text-5xl text-center font-extrabold">
             <h1 className="text-primary_orange-0">Projects - GSSoC&apos;{year}</h1>
           </div>
@@ -323,7 +323,7 @@ const Project = () => {
             </div>
           </div>       
         {year==="2024-Extd" && (      // remove this when full code when leaderboard display time
-            <div className="flex justify-center items-center mt-16 px-4">
+            <div className="flex font-sans justify-center items-center mt-16 px-4">
               <div className="text-xl text-center text-black dark:text-white w-full max-w-3xl">
                 <h1 className="text-5xl font-extrabold text-[#f57d33] mb-8 animate-pulse">
                   COMING SOON!
@@ -342,12 +342,12 @@ const Project = () => {
           </div>
         )}
         {data.length > 1 && year!=="2024-Extd" && (
-          <div>
+          <div className="font-sans">
             <Spacer mt={10} mb={10} />
             <SearchTags setSearchTerm={setSearchTerm} />
             <Spacer mt={10} mb={10} />
             <div
-              className="flex flex-row justify-center flex-wrap items-center 
+              className="flex flex-row font-sans justify-center flex-wrap items-center 
         gap-x-10 gap-y-10 mt-9"
             >
               {data
@@ -367,7 +367,7 @@ const Project = () => {
                 .map((curElem, i) => {
                   return (
                     <div
-                      className="flex items-center justify-between w-80"
+                      className="flex font-sans items-center justify-between w-80"
                       key={i}
                       data-aos="flip-up"
                       data-aos-duration="800"

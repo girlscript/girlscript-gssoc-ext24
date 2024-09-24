@@ -55,7 +55,7 @@ function Carousel() {
 
   return (
     <>
-      <div className="navigation-wrapper relative">
+      <div className="navigation-wrapper relative font-sans">
         <div
           ref={sliderRef}
           className="keen-slider cursor-grab rounded-xl h-96"

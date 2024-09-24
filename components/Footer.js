@@ -10,7 +10,7 @@ const Footer = () => {
 
   return (
     <footer id="Contact">
-      <div className="footer-2 bg-gradient-to-b from-[#FF8500] to-[#FF6701] pt-6 md:pt-8">
+      <div className="footer-2 font-sans font-bold bg-gradient-to-b from-[#FF8500] to-[#FF6701] pt-6 md:pt-8">
         <div className="container px-4 mx-auto">
           <div className="md:flex md:flex-wrap md:-mx-4 py-6 md:pb-8">
             <div className="footer-info lg:w-1/3 md:px-4">

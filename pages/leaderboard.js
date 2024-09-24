@@ -652,7 +652,7 @@ function Leaderboard() {
       )}
       {showConfetti && <Confetti className="fullscreen" />}
       <div
-        className="container transition-colors mt-12 mb-0 md:mb-12 p-8 sm:px-10 md:px-10 lg:px-20 2xl:px-32 dark:bg-darkmode_gray-0 dark:transition-colors "
+        className="container font-sans transition-colors mt-12 mb-0 md:mb-12 p-8 sm:px-10 md:px-10 lg:px-20 2xl:px-32 dark:bg-darkmode_gray-0 dark:transition-colors "
         style={{ margin: "auto" }}
       >
         <div className="flex flex-row justify-center flex-wrap items-center gap-5">

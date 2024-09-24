@@ -23,7 +23,7 @@ function Faq() {
       </div>
 
 
-        <div className="flex flex-col w-full justify-center px-16 mt-16 mb-10">
+        <div className="flex font-sans flex-col w-full justify-center px-16 mt-16 mb-10">
           {data.map((curElem) => (
             <DiabloAccordion key={curElem.id} {...curElem} />
           ))}

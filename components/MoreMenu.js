@@ -10,7 +10,7 @@ function classNames(...classes) {
 
 const MoreMenu = ({ handleClick }) => {
   return (
-    <Menu as="div" className="relative inline-block text-left">
+    <Menu as="div" className="relative inline-block text-left font-sans">
       <div>
         <Menu.Button
           className={`lg:inline-flex lg:w-auto w-full py-2 text-center rounded text-grey-800 text-1xl font-medium hover:text-primary_orange-0 dark:hover:text-primary_orange-0"} hover:text-lg transition-all link link-underline link-underline-black`}

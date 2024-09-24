@@ -27,7 +27,7 @@ const DiabloAccordion = ({ question, answer }) => {
           m={3}
           color={isDarkMode ? "#FFA500" : "#FFF"}
           backgroundColor={isDarkMode ? "#131313" : "#F97316"}
-          className="flex flex-col w-full sm:w-11/12 md:w-4/5 lg:w-3/4 xl:w-2/3 border !mx-auto my-[5px] p-2.5 rounded-tl-[20px] rounded-br-[20px] border-solid border-[#ccc]"
+          className="flex font-sans flex-col w-full sm:w-11/12 md:w-4/5 lg:w-3/4 xl:w-2/3 border !mx-auto my-[5px] p-2.5 rounded-tl-[20px] rounded-br-[20px] border-solid border-[#ccc]"
         >
           <AccordionButton className="w-full flex flex-row items-center justify-between">
             <div className="flex flex-row justify-between items-center">

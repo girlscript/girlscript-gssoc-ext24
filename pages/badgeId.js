@@ -66,7 +66,7 @@ const Badge = () => {
         </title>
         <meta name="description" content="GirlScript Summer of Code BadgeID" />
       </Head>
-      <div className="items-center justify-center">
+      <div className="items-center justify-center font-sans">
         <div className="mt-5 font-sans text-center text-2xl font-extrabold text-black-100">
           <div className="text-primary_orange-0 dark:text-white font-sans text-3xl md:text-5xl text center font-extrabold flex wrap justify-center flex-col md:flex-row mb-10 underline decoration-orange-500  underline-offset-8">
             <h1>Get your&nbsp;</h1>
@@ -75,8 +75,8 @@ const Badge = () => {
         </div>
       </div>
       <Spacer mt={20} />
-      <div className="flex flex-col bg-white shadow-2xl dark:bg-black mb-10 rounded-md mx-2 sm:mx-10 md:mx-10 lg:mx-20 px-10 py-2">
-        <label className="text-black dark:text-primary_orange-0 font-semibold mt-3 text-lg">
+      <div className="flex font-sans flex-col bg-white shadow-2xl dark:bg-black mb-10 rounded-md mx-2 sm:mx-10 md:mx-10 lg:mx-20 px-10 py-2">
+        <label className="text-black dark:text-primary_orange-0 font-semibold font-sans mt-3 text-lg">
           Enter Registered Email*
         </label>
         <input
@@ -122,7 +122,7 @@ const Badge = () => {
         ></input>
 
         <Box mt={4}>
-          <FormLabel className="text-black dark:text-primary_orange-0 font-semibold mt-4">
+          <FormLabel className="text-black font-sans dark:text-primary_orange-0 font-semibold mt-4">
             Upload Your Image (PNG, JPG, JPEG) Max-size: 5MB
           </FormLabel>
           <Button
