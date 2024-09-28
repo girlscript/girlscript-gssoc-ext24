@@ -14,11 +14,11 @@ const BadgeID_Comp = (props) => {
     const getBadgeData = async () => {
       try {
         const resCA = await axios.get(
-          `https://opensheet.elk.sh/1v7G6EICAMtZtf1B4KuzJI_VNQE2YmKjNusu_wPPOw6g/1`
+          `https://opensheet.elk.sh/1pXxNrZJCt0KRmaBjg1aVOTY7rRGUeFAkdf2GoyB6xzc/1`
         );
         const dataCA = await resCA.data;
         const resC = await axios.get(
-          `https://opensheet.elk.sh/1rCkCtw-DS8q2awBcFFM1KtAYen2HZD2hHg41v7ek2lA/1`
+          `https://opensheet.elk.sh/1NApJLL6alA7YlsAw6azx6RfErpMKYNmU8-sJpEZtR1A/1`
         );
         const dataC = await resC.data;
         const resM = await axios.get(
